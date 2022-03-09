@@ -1,46 +1,26 @@
-package com.project.package1.entity;
+package com.project.package1.model;
 
 import java.time.LocalDate;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+public class CustomerModel {
 
-@Entity
-@Table(name = "Customer_tbl")
-public class Customer {
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	
-	@Column(name = "CustomerId")
 	private int customerId;
 
-	@Column(name = "Name")
 	private String customerName;
 
-	@Column(name = "PhoneNo")
 	private String mobileNo;
 
-	@Column(name = "Email")
 	private String email;
-
-	@Column(name = "Gender")
+	
 	private char gender;
 
-	@Column(name = "Dob")
 	private LocalDate dob;
 
-	@Column(name = "Age")
 	private int age;
 
-	@Column(name = "Address")
 	private String address;
 
-	@Column(name = "Govt_Id")
 	private int govtId;
 
 	public int getCustomerId() {
@@ -114,8 +94,7 @@ public class Customer {
 	public void setGovtId(int govtId) {
 		this.govtId = govtId;
 	}
-
-	
 	
 
+	
 }

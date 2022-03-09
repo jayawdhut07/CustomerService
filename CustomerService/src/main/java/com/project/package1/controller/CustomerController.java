@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.project.package1.entity.Customer;
+import com.project.package1.model.CustomerModel;
 import com.project.package1.service.CustomerService;
 
 @RestController
@@ -22,24 +23,24 @@ public class CustomerController {
 	private CustomerService customerService;
 
 	@PostMapping("/save")
-	public ResponseEntity<Customer> addCustomer(@RequestBody Customer customer) {
-		Customer newCustomer = customerService.saveCustomer(customer);
+	public ResponseEntity<CustomerModel> addCustomer(@RequestBody CustomerModel customerModel) {
+		CustomerModel newCustomer = customerService.saveCustomer(customerModel);
 
-		ResponseEntity<Customer> responseEntity = new ResponseEntity<Customer>(newCustomer, HttpStatus.CREATED);
+		ResponseEntity<CustomerModel> responseEntity = new ResponseEntity<CustomerModel>(newCustomer, HttpStatus.CREATED);
 		return responseEntity;
 	}
 
 	@GetMapping("/get/{cid}")
 	public ResponseEntity<?> fetchCustomerDetails(@PathVariable("cid") int customerId) {
 
-		Customer customer = customerService.getCustomerById(customerId);
-		return new ResponseEntity<>(customer, HttpStatus.OK);
+		CustomerModel customerModel = customerService.getCustomerById(customerId);
+		return new ResponseEntity<>(customerModel, HttpStatus.OK);
 	}
 
 	@PutMapping("/update")
-	public ResponseEntity<Customer> modifyCustomer(@RequestBody Customer customer) {
+	public ResponseEntity<CustomerModel> modifyCustomer(@RequestBody CustomerModel customerModel) {
 
-		Customer updatedCustomer = customerService.updateCustomerProfile(customer);
+		CustomerModel updatedCustomer = customerService.updateCustomerProfile(customerModel);
 		return new ResponseEntity<>(updatedCustomer, HttpStatus.OK);
 	}
 }

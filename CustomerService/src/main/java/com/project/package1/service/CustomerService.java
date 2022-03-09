@@ -1,15 +1,15 @@
 package com.project.package1.service;
 
-import com.project.package1.entity.Customer;
+import com.project.package1.model.CustomerModel;
 
 public interface CustomerService {
 
 	
-	public Customer saveCustomer(Customer customer);
+	public CustomerModel saveCustomer(CustomerModel customerModel);
 	
-	public Customer getCustomerById(int customerId);
+	public CustomerModel getCustomerById(int customerId);
 
-	public Customer updateCustomerProfile(Customer customer);
+	public CustomerModel updateCustomerProfile(CustomerModel customerModel);
 
 
 }
