@@ -53,7 +53,7 @@ public class CustomerServiceImpl implements CustomerService {
 		
 		if(optionalCustomer.isEmpty()) {
 			
-			throw new CustomerNotFoundException("Sorry! Customer not found with id" + customerId);
+			throw new CustomerNotFoundException("Sorry! Customer not found with id " + customerId);
 			
 		}
 		
@@ -75,10 +75,9 @@ public class CustomerServiceImpl implements CustomerService {
 			
 			if(optionalCustomer.isEmpty()) {
 				
-				throw new CustomerNotFoundException("Sorry! customer not found with id" +customerModel.getCustomerId());
+				throw new CustomerNotFoundException("Sorry! customer not found with id" + customerModel.getCustomerId());
 				
 			}
-			
 			Customer updatedCustomer = customerRepository.save(conversion.modelToEntity(customerModel));
 			return conversion.entityToModel(updatedCustomer);
 

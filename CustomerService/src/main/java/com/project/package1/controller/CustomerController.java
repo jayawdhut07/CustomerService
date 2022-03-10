@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.project.package1.entity.Customer;
 import com.project.package1.model.CustomerModel;
 import com.project.package1.service.CustomerService;
 
@@ -34,6 +33,7 @@ public class CustomerController {
 	public ResponseEntity<?> fetchCustomerDetails(@PathVariable("cid") int customerId) {
 
 		CustomerModel customerModel = customerService.getCustomerById(customerId);
+		
 		return new ResponseEntity<>(customerModel, HttpStatus.OK);
 	}
 
